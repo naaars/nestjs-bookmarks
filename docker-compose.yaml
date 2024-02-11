@@ -11,6 +11,17 @@ services:
     networks:
       - inigomorenonest
     ports:
-      - 5432:5432
+      - 5434:5432
+  test-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - inigomorenonest
+    ports:
+      - 5435:5432
 networks:
   inigomorenonest:
